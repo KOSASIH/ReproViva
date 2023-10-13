@@ -489,6 +489,8 @@ Remember to secure any sensitive information like API keys or credentials by sto
 
 This code provides a basic example of how to send email notifications using SendGrid. If you choose a different service provider or want to implement push notifications, refer to their documentation for the specific integration steps and code examples.
 
+## Recomendation Engine 
+
 To implement a recommendation engine for personalized suggestions based on the user's menstrual cycle data, we can use machine learning algorithms. Here's an outline of how you can approach this task:
 
 1. Data Collection and Preparation:
