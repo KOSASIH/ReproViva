@@ -264,3 +264,77 @@ Note: This code assumes the use of a SQLite database. You can change the databas
 To run the code, you'll need to install the required dependencies by running `pip install flask flask_sqlalchemy`. Then, you can save the code in a file (e.g., `app.py`) and run it using `python app.py`. The API will be accessible at `http://localhost:5000`.
 
 Remember to handle authentication and authorization appropriately to ensure the security and privacy of user data.
+
+## Visualize Menstrual Cycle Data
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menstrual Cycle Data Visualization</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Menstrual Cycle Data Visualization</h1>
+        <canvas id="cycleChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sample data
+    const cycleData = [
+      { date: '2022-01-01', duration: 5 },
+      { date: '2022-02-01', duration: 4 },
+      { date: '2022-03-01', duration: 6 },
+      { date: '2022-04-01', duration: 5 },
+      { date: '2022-05-01', duration: 6 },
+      { date: '2022-06-01', duration: 4 },
+    ];
+
+    // Prepare data for chart
+    const labels = cycleData.map((data) => data.date);
+    const durations = cycleData.map((data) => data.duration);
+
+    // Create chart
+    const cycleChart = new Chart(document.getElementById('cycleChart'), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Cycle Duration',
+          data: durations,
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Date'
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Duration (days)'
+            },
+            min: 0
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+```
+
+This code creates a simple web page with a line chart using Chart.js library to visualize menstrual cycle data. It includes a sample dataset with dates and cycle durations. The chart displays the cycle duration on the y-axis and the dates on the x-axis. Users can customize the chart appearance and add more datasets as needed.
