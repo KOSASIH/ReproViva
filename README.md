@@ -188,3 +188,79 @@ A high-tech system focused on Empowering Sexual and Reproductive Health for Wome
 ```
 
 This is a complete HTML, CSS, and JavaScript code for a user-friendly web interface that allows women to track their menstrual cycles. The code includes a calendar view, data input fields, and a display area for the recorded data. Users can input the start and end dates of their menstrual cycles, symptoms, and mood changes. The recorded data is stored in an array and displayed in an organized manner.
+
+## Example Code
+
+To implement the backend system for storing and processing the data entered by users in the web interface, we can use Python and Flask as the web framework. We'll also use SQLAlchemy as the Object-Relational Mapping (ORM) library to interact with the database.
+
+Here's an example of how the code might look:
+
+```python
+from flask import Flask, request, jsonify
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cycle_tracker.db'
+db = SQLAlchemy(app)
+
+# Define the model for menstrual cycle data
+class Cycle(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    start_date = db.Column(db.Date, nullable=False)
+    end_date = db.Column(db.Date, nullable=False)
+    symptoms = db.Column(db.String(255))
+    mood_changes = db.Column(db.String(255))
+
+    def __init__(self, start_date, end_date, symptoms, mood_changes):
+        self.start_date = start_date
+        self.end_date = end_date
+        self.symptoms = symptoms
+        self.mood_changes = mood_changes
+
+# API endpoint to add a new menstrual cycle entry
+@app.route('/cycles', methods=['POST'])
+def add_cycle():
+    data = request.get_json()
+    start_date = datetime.strptime(data['start_date'], '%Y-%m-%d').date()
+    end_date = datetime.strptime(data['end_date'], '%Y-%m-%d').date()
+    symptoms = data['symptoms']
+    mood_changes = data['mood_changes']
+
+    cycle = Cycle(start_date=start_date, end_date=end_date, symptoms=symptoms, mood_changes=mood_changes)
+    db.session.add(cycle)
+    db.session.commit()
+
+    return jsonify({'message': 'Cycle entry added successfully'})
+
+# API endpoint to retrieve menstrual cycle data for a specific date range
+@app.route('/cycles', methods=['GET'])
+def get_cycles():
+    start_date = request.args.get('start_date')
+    end_date = request.args.get('end_date')
+
+    cycles = Cycle.query.filter(Cycle.start_date >= start_date, Cycle.end_date <= end_date).all()
+
+    cycle_data = []
+    for cycle in cycles:
+        cycle_data.append({
+            'start_date': cycle.start_date.strftime('%Y-%m-%d'),
+            'end_date': cycle.end_date.strftime('%Y-%m-%d'),
+            'symptoms': cycle.symptoms,
+            'mood_changes': cycle.mood_changes
+        })
+
+    return jsonify(cycle_data)
+
+if __name__ == '__main__':
+    db.create_all()
+    app.run()
+```
+
+In this code, we define a `Cycle` model that represents the menstrual cycle data. The model has properties for the start date, end date, symptoms, and mood changes. We also define API endpoints to add a new cycle entry and retrieve cycle data for a specific date range.
+
+Note: This code assumes the use of a SQLite database. You can change the database URI in the `app.config['SQLALCHEMY_DATABASE_URI']` line to use a different database system if needed.
+
+To run the code, you'll need to install the required dependencies by running `pip install flask flask_sqlalchemy`. Then, you can save the code in a file (e.g., `app.py`) and run it using `python app.py`. The API will be accessible at `http://localhost:5000`.
+
+Remember to handle authentication and authorization appropriately to ensure the security and privacy of user data.
