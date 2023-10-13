@@ -338,3 +338,103 @@ Remember to handle authentication and authorization appropriately to ensure the 
 ```
 
 This code creates a simple web page with a line chart using Chart.js library to visualize menstrual cycle data. It includes a sample dataset with dates and cycle durations. The chart displays the cycle duration on the y-axis and the dates on the x-axis. Users can customize the chart appearance and add more datasets as needed.
+
+## Starting Point
+
+To complete task 4, you can use the following code snippets as a starting point:
+
+### User Authentication System
+
+#### HTML Markup (login.html)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form action="/login" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
+```
+
+#### HTML Markup (register.html)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form action="/register" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
+```
+
+#### JavaScript (main.js)
+
+```javascript
+// Hashing and salting the password
+function hashPassword(password) {
+    // Implement your password hashing and salting algorithm here
+    // Return the hashed and salted password
+}
+
+// User registration
+app.post('/register', (req, res) => {
+    const { email, password } = req.body;
+
+    // Check if the user already exists in the database
+    const existingUser = db.find(user => user.email === email);
+    if (existingUser) {
+        return res.status(409).send('User already exists');
+    }
+
+    // Hash and salt the password
+    const hashedPassword = hashPassword(password);
+
+    // Create a new user object and store it in the database
+    const newUser = { email, password: hashedPassword };
+    db.push(newUser);
+
+    return res.status(200).send('User registered successfully');
+});
+
+// User login
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+
+    // Find the user in the database
+    const user = db.find(user => user.email === email);
+    if (!user) {
+        return res.status(401).send('Invalid email or password');
+    }
+
+    // Verify the password
+    const hashedPassword = hashPassword(password);
+    if (user.password !== hashedPassword) {
+        return res.status(401).send('Invalid email or password');
+    }
+
+    // User authentication successful
+    return res.status(200).send('Login successful');
+});
+```
+
+Please note that the above code snippets are just a starting point and may need to be adapted to fit your specific requirements. You'll also need to implement the database functionality and handle session management, which is beyond the scope of this code snippet.
