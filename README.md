@@ -7,7 +7,7 @@ A high-tech system focused on Empowering Sexual and Reproductive Health for Wome
 - [Vision And Mission](#vision-and-mission)
 - [Technologies](#technologies)
 - [Our Challenges](#our-challenges)
-- [Problem To Solve](#problem-to-solve) 
+- [Problems To Solve](#problems-to-solve) 
 
 # Description 
 
