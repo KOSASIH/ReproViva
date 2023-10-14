@@ -4,7 +4,7 @@ A high-tech system focused on Empowering Sexual and Reproductive Health for Wome
 # Contents 
 
 - [Description](#description)
-- 
+- [Vision And Mission](#vision-and-mission) 
 
 # Description 
 
@@ -25,6 +25,14 @@ ReproViva is an innovative and empowering digital platform dedicated to enhancin
 6. **Data Security:** Rest assured that your privacy is a top priority. ReproViva upholds the highest standards of data security and confidentiality.
 
 ReproViva is committed to promoting well-being, informed choices, and access to comprehensive sexual and reproductive health support. It's like having a knowledgeable and compassionate companion by your side, ensuring you are in control of your reproductive health journey. Welcome to a world of empowerment and health, welcome to ReproViva.
+
+# Vision And Mission 
+
+**Vision:**
+ReproViva envisions a world where every woman has the knowledge, resources, and support to take control of her sexual and reproductive health. We aspire to create a future where women are empowered to make informed decisions, lead healthy lives, and navigate their reproductive journeys with confidence.
+
+**Mission:**
+ReproViva's mission is to provide women with accessible, personalized, and reliable tools and resources for their sexual and reproductive health. We are committed to delivering education, guidance, and support at every stage of a woman's life. Our aim is to enhance women's well-being, promote informed choices, and ensure they have the power to take charge of their reproductive health. We prioritize privacy, inclusivity, and innovation in fulfilling our mission, working to make a positive impact on women's lives worldwide.
 
 # Tutorials 
 
