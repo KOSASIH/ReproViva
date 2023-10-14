@@ -9,7 +9,8 @@ A high-tech system focused on Empowering Sexual and Reproductive Health for Wome
 - [Our Challenges](#our-challenges)
 - [Problems To Solve](#problems-to-solve)
 - [Contributor Guide](#contributor-guide) 
-- [Tutorials](#tutorials) 
+- [Tutorials](#tutorials)
+- [Aknowledgement](docs/aknowledgement.md) 
 
 # Description 
 
