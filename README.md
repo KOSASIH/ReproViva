@@ -8,6 +8,7 @@ A high-tech system focused on Empowering Sexual and Reproductive Health for Wome
 - [Technologies](#technologies)
 - [Our Challenges](#our-challenges)
 - [Problems To Solve](#problems-to-solve)
+- [Contributor Guide](#contributor-guide) 
 - [Tutorials](#tutorials) 
 
 # Description 
@@ -107,6 +108,86 @@ ReproViva aims to address several critical problems related to women's sexual an
 10. **Empowerment:** ReproViva aims to empower women to make informed choices about their sexual and reproductive health, enabling them to take control of their own well-being.
 
 By addressing these critical problems, ReproViva contributes to the overall well-being and empowerment of women, making a positive impact on their lives and the communities they are part of.
+
+# Contributor Guide
+
+Welcome to ReproViva ! We appreciate your interest in contributing to our open-source project. Whether you're a developer, designer, or documentation enthusiast, there are several ways to get involved and make a meaningful impact. This guide will help you understand how to contribute effectively.
+
+## Table of Contents
+
+1. [Getting Started](#getting-started)
+2. [Code of Conduct](#code-of-conduct)
+3. [How to Contribute](#how-to-contribute)
+4. [Bug Reports](#bug-reports)
+5. [Feature Requests](#feature-requests)
+6. [Pull Requests](#pull-requests)
+7. [Coding Guidelines](#coding-guidelines)
+8. [Code Review Process](#code-review-process)
+9. [Documentation](#documentation)
+10. [Community](#community)
+11. [Contact Us](#contact-us)
+
+### 1. Getting Started
+
+Before you start contributing, make sure you have the following:
+
+- A GitHub account.
+- [Git](https://git-scm.com/) installed on your local machine.
+- Familiarity with the basics of [Git and GitHub](https://guides.github.com/).
+
+### 2. Code of Conduct
+
+Please review our [Code of Conduct](CODE_OF_CONDUCT.md). We expect all contributors to adhere to it.
+
+### 3. How to Contribute
+
+To get started, follow these steps:
+
+- [Fork the repository](https://help.github.com/en/github/getting-started-with-github/fork-a-repo).
+- [Clone your fork](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
+- Create a new branch for your feature or bug fix (`git checkout -b feature/your-feature`).
+- Make your changes and commit them.
+- Push your branch to your fork (`git push origin feature/your-feature`).
+- Open a [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests).
+
+### 4. Bug Reports
+
+If you find a bug, please [open an issue](../../issues) with a clear description of the problem, including steps to reproduce it and your environment details.
+
+### 5. Feature Requests
+
+We welcome feature requests. Please open an issue describing the feature you'd like to see and why it would be valuable.
+
+### 6. Pull Requests
+
+When submitting a Pull Request, make sure to follow these guidelines:
+
+- Explain the purpose and scope of your changes.
+- Keep your code clean and consistent with our [coding guidelines](#coding-guidelines).
+- Ensure your changes are well-tested.
+- Sign your commits using `git commit -s` if possible.
+
+### 7. Coding Guidelines
+
+Before making changes, review our [coding guidelines](CODING_GUIDELINES.md) for specific coding standards and practices.
+
+### 8. Code Review Process
+
+All contributions go through a code review process. Be prepared to make changes based on feedback and collaborate with other contributors.
+
+### 9. Documentation
+
+Contribution to documentation is highly encouraged. Help us improve our [documentation](docs/) by submitting Pull Requests with clarifications, corrections, or new content.
+
+### 10. Community
+
+Join our community by following us on social media or participating in discussions on our [GitHub Discussions](../../discussions) page.
+
+### 11. Contact Us
+
+If you have any questions or need assistance, feel free to reach out to us via [email](support@reproviva.com).
+
+Thank you for your interest in contributing to ReproViva. We value your contributions and look forward to working together to make this project a success!
 
 # Tutorials 
 
